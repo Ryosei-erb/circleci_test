@@ -17,3 +17,9 @@ jobs:
             source $BASH_ENV
             gem install bundler
       - ruby/bundle-install
+      - run:
+          name: Rubocop
+          command: bundle exec rubocop --require rubocop-airbnb
+      - run:
+          name: RSpec
+          command: bin/rspec
